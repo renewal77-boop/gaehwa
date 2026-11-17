@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>개화와 후속 프로그램</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* Layout: one quiet reading column on ivory paper; image rows set like cards laid on a table. */
+  :root {
+    --bg: #faf6ee;          /* ivory paper */
+    --paper: #fffdf8;       /* card surface */
+    --fg: #3a2f2a;          /* warm ink */
+    --muted: #7d6f66;
+    --line: #e6dccb;
+    --accent: #6b3f55;      /* plum, from the 開花 lettering */
+    --accent-soft: #f3e4ea; /* blossom */
+    --link: #5a4aa0;
+    --font-display: "Gowun Batang", "KoPub Batang", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+    --font-body: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1d1a18; --paper: #26221f; --fg: #ece4d8; --muted: #b3a79b; --line: #3b342e;
+      --accent: #e3b4c8; --accent-soft: #3a2a33; --link: #b9aef0; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1d1a18; --paper: #26221f; --fg: #ece4d8; --muted: #b3a79b; --line: #3b342e;
+    --accent: #e3b4c8; --accent-soft: #3a2a33; --link: #b9aef0; color-scheme: dark;
+  }
+
+  /* 한글은 어절 단위로만 줄을 바꾼다 */
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.75; word-break: keep-all; overflow-wrap: break-word; }
+  .wrap {
+    max-width: 860px; margin: 0 auto;
+    padding-block: 40px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  header { text-align: left; border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 28px; }
+  .eyebrow { font-family: var(--font-display); color: var(--accent); letter-spacing: 0.18em; font-size: 14px; margin: 0 0 8px; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(25px, 6.6vw, 40px); line-height: 1.3; margin: 0 0 16px; }
+  .nb { white-space: nowrap; }      /* 이 덩어리 안에서는 줄을 바꾸지 않는다 */
+  .lede { font-size: 17px; max-width: 62ch; margin: 0; }
+  h2 { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--accent); margin: 40px 0 12px; text-wrap: balance; }
+  p { margin: 0 0 12px; max-width: 68ch; }
+
+  ul.plan { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  ul.plan li { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  ul.plan li b { display: block; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
+  ul.plan li span { color: var(--fg); }
+
+  .row { display: grid; gap: 16px; margin: 18px 0 6px; }
+  .row.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .row.two { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: end; }
+  @media (max-width: 560px) {
+    .row.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .row.three figure:last-child { grid-column: span 2; }
+    .row.three figure:last-child img { max-width: 60%; }
+    .row.cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .row.cards figure:last-child { grid-column: auto; }
+    .row.cards figure:last-child img { max-width: 100%; }
+    .row.two { grid-template-columns: 1fr; }
+  }
+  figure { margin: 0; min-width: 0; text-align: center; }
+  figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px; box-shadow: 0 1px 2px rgba(60,40,30,.12), 0 6px 18px rgba(60,40,30,.10); }
+  figure.flat img { box-shadow: none; border-radius: 0; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  .ten { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px; align-items: center; margin-top: 14px; }
+  @media (max-width: 640px) { .ten { grid-template-columns: 1fr; } }
+  .ten ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; font-size: 15px; }
+  .ten li { display: flex; gap: 8px; align-items: baseline; border-bottom: 1px solid var(--line); padding: 4px 0; }
+  .ten li i { font-style: normal; font-family: var(--font-display); color: var(--accent); min-width: 2.2em; }
+
+  .strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); gap: 12px; overflow-x: auto; padding: 6px 2px 14px; margin-top: 14px; scroll-snap-type: x proximity; }
+  .strip figure { scroll-snap-align: start; }
+  @media (max-width: 640px) { .strip { grid-auto-columns: 62%; } }
+
+  .try { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 20px; align-items: center;
+         background: var(--accent-soft); border-radius: 12px; padding: 20px; margin-top: 16px; }
+  @media (max-width: 560px) { .try { grid-template-columns: 1fr; } .try .qr { order: -1; } }
+  .try p { margin: 0 0 10px; }
+  .try a.link { font-weight: 700; color: var(--link); word-break: break-all; }
+  .try .qr { background: #fff; padding: 10px; border-radius: 8px; justify-self: center; }
+  .try .qr img { display: block; width: 130px; height: 130px; }
+  .copy { margin-top: 8px; display: inline-flex; gap: 8px; align-items: center; }
+  .copy button { font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; }
+  .copy button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .copy .done { font-size: 13px; color: var(--muted); }
+
+  footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  @media (prefers-reduced-motion: no-preference) { figure img { transition: transform .25s ease; } figure img:hover { transform: translateY(-2px); } }
+  .host { margin: 16px 0 0; font-size: 15px; }
+  .host b { margin-right: 8px; font-weight: 700; opacity: .7; }
+  #try { scroll-margin-top: 16px; }
+  h2 { scroll-margin-top: 16px; }
+  h3 { font-family: var(--font-display); font-size: 17px; margin: 26px 0 8px; }
+  .tag { display: inline-block; vertical-align: middle; margin-left: 6px; padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-family: var(--font-body); font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .quote { font-family: var(--font-display); font-size: 18px; border-left: 3px solid var(--accent); padding-left: 14px; margin: 4px 0 14px; }
+  dl.facts { margin: 14px 0 0; border-top: 1px solid var(--line); }
+  dl.facts div { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+  dl.facts dt { color: var(--accent); font-weight: 700; }
+  dl.facts dd { margin: 0; }
+  ol.flow { list-style: none; counter-reset: f; margin: 0; padding: 0; display: grid; gap: 8px; }
+  ol.flow li { counter-increment: f; position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 12px 50px; }
+  ol.flow li::before { content: counter(f); position: absolute; left: 14px; top: 12px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+  ol.flow li b { display: block; color: var(--accent); }
+  ol.six { list-style: none; counter-reset: s; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  @media (max-width: 560px) { ol.six { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  ol.six li { counter-increment: s; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 15px; }
+  ol.six li::before { content: "0" counter(s); display: block; font-family: var(--font-display); color: var(--accent); font-size: 13px; }
+  .tw { overflow-x: auto; margin-top: 6px; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--accent); white-space: nowrap; font-size: 13px; }
+  td:first-child { font-weight: 700; white-space: nowrap; }
+  ul.dots, ol.num { margin: 0; padding-left: 1.3em; max-width: 68ch; }
+  ul.dots li, ol.num li { margin-bottom: 6px; }
+  ol.num li b { color: var(--accent); margin-right: 6px; }
+  @media (min-width: 720px) { ul.plan.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  ul.plan.three + dl.facts { margin-top: 16px; }
+  .idea { background: var(--accent-soft); border-radius: 12px; padding: 16px 18px; margin-top: 14px; }
+  .idea b { color: var(--accent); }
+  .idea ul { margin: 6px 0 0; padding-left: 1.2em; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow"><span class="nb">開花 · 저마다 다른 모습으로,</span> <span class="nb">저마다의 아름다움을 피웁니다</span></p>
+    <h1><span class="nb">개화(開花) 프로젝트를</span> <span class="nb">시작합니다</span></h1>
+    <p class="lede">꽃을 매개로 청년이 자기 자신을 돌아보는 체험 프로젝트 「개화」를 준비하고 있습니다. 태어난 날에 담긴 열 가지 기운을 열 송이의 꽃에 비유해 "나를 닮은 꽃"을 찾고, 그 꽃의 이야기를 나누는 방식입니다. 꽃은 프로젝트에서 만든 창작 상징이며, 사주 풀이가 아니라 자기 이해와 성찰로 이어지는 대화를 목표로 합니다. 이 안내에는 12월 꽃 테마카페와 2027년 1월 후속 모임의 초안도 함께 담았습니다.</p>
+    <p class="host"><b>주최</b> <span class="nb">상생크리에이터</span> <span class="nb">(상생방송 서포터즈)</span></p>
+  </header>
+
+  <div class="row three">
+    <figure><img src="img/card_front.jpg" alt="홍보 포토카드 앞면. 개화 開花, 태어난 날에 숨겨진 열 가지 기운, 그리고 그 기운을 닮은 열 송이의 꽃." width="754" height="1200"><figcaption>홍보 포토카드 앞면</figcaption></figure>
+    <figure><img src="img/card_back.jpg" alt="홍보 포토카드 뒷면. 나의 꽃 찾기 QR과 참여 순서." width="754" height="1200"><figcaption>홍보 포토카드 뒷면 (QR)</figcaption></figure>
+    <figure><img src="img/a4.jpg" alt="현장 게시용 나의 꽃 찾기 홍보물" width="900" height="1200"><figcaption>현장 게시용 「나의 꽃 찾기」 홍보물</figcaption></figure>
+  </div>
+
+  <h2>어떻게 진행되나요</h2>
+  <ul class="plan">
+    <li><b>11월 21일(토)부터 주말, 대전역</b><span>지나는 분들이 QR로 1~2분 만에 나의 꽃을 찾아보고, 꽃카드를 받아 갑니다. STB 상생방송 SNS 구독·팔로우 이벤트도 함께 진행합니다.</span></li>
+    <li><b>12월 중(날짜 미정), 교육관 2층 북카페</b><span>꽃 테마카페 「개화 — 꽃으로 읽는 나」. 장소만 정해졌고, 날짜와 무엇을 할지는 정하는 중입니다. 개인별 꽃 이야기, 차와 향, 짧은 호흡 명상 등을 후보로 두고 있습니다.</span></li>
+    <li><b>2027년 1월 (계획)</b><span>후속 모임 「숨·빛·꽃」. 호흡 명상으로 시작해 선정화·인간꽃 등 수행문화를 소개하고 함께 체험합니다.</span></li>
+  </ul>
+
+  <figure style="margin-top:24px"><img src="img/site.jpg" alt="대전역 광장에 개화 테이블, SNS 이벤트 배너, STB 상생방송 뽑기 테이블이 나란히 놓인 현장 구성 시안" width="1400" height="788"><figcaption>11월 21일 대전역 오프활동 현장 구성 시안. 왼쪽 개화 테이블, 가운데 SNS 이벤트 배너, 오른쪽 STB 상생방송 뽑기 테이블</figcaption></figure>
+
+
+  <h2 id="cafe">12월 꽃 테마카페 <span class="tag">초안 · 확정 전</span></h2>
+  <p class="quote">가판대에서는 나의 꽃을, 테마카페에서는 나의 이야기를 발견합니다.</p>
+  <p>이름은 「개화 — 꽃으로 읽는 나」입니다. 대전역에서 꽃을 찾은 분과 새로 오는 청년·수험생이, 같은 꽃으로 이야기를 시작해 차를 맛보고 숨을 고르며 그 꽃이 자신에게 어떤 의미인지 돌아보는 자리입니다.</p>
+  <dl class="facts">
+    <div><dt>일시</dt><dd>12월 중. 날짜, 회차, 시간은 미정</dd></div>
+    <div><dt>내용</dt><dd>미정. 아래는 지금까지 나온 초안이며 바뀔 수 있습니다</dd></div>
+    <div><dt>장소</dt><dd>교육관 2층 북카페</dd></div>
+    <div><dt>대상</dt><dd>11월 꽃 찾기 참여자와 새로 오는 청년·수험생</dd></div>
+    <div><dt>정원·참가비</dt><dd>미정</dd></div>
+  </dl>
+
+  <h3>진행 흐름 (안)</h3>
+  <ol class="flow">
+    <li><b>접수</b><span>예약과 꽃 이름을 확인하고 개인별 꽃 이야기 결과지를 드립니다.</span></li>
+    <li><b>테이블에서 나의 꽃 이야기</b><span>테이블마다 진행자가 앉아 "지금의 나와 어떤 점이 닮았나요?" 같은 질문으로 대화를 엽니다.</span></li>
+    <li><b>선택 코너</b><span>아래 후보 가운데 공간과 인력에 맞는 것만 골라 엽니다.</span></li>
+    <li><b>마무리</b><span>1월 「숨·빛·꽃」 모임을 소개합니다. 참가 여부는 본인이 고릅니다.</span></li>
+  </ol>
+
+  <h3>개인별 꽃 이야기에 담는 것</h3>
+  <p>대전역에서는 열 가지 꽃 가운데 하나와 짧은 글만 받습니다. 카페에서는 한 사람 한 사람에게 맞춘 글을 드립니다. 성격을 진단하거나 고칠 점을 처방하는 글이 아니라, 자기 안의 가능성을 돌아보는 글입니다.</p>
+  <ol class="six">
+    <li>나의 꽃</li><li>꽃이 자라는 풍경</li><li>나만의 아름다움</li><li>꽃이 흔들리는 순간</li><li>꽃을 피우는 조건</li><li>개화의 메시지</li>
+  </ol>
+
+  <h3>선택 코너 후보 <span class="tag">아이디어가 더 필요합니다</span></h3>
+  <p>아래는 지금까지 나온 후보일 뿐이고, 무엇을 열지는 정하지 않았습니다. 청년이 "이건 해 보고 싶다"고 느낄 코너가 더 필요합니다. 떠오르는 것이 있으면 작은 것이라도 알려 주세요.</p>
+  <div class="tw"><table>
+    <tr><th>코너</th><th>참여자가 하는 일</th><th>아직 정할 것</th></tr>
+    <tr><td>차와 향</td><td>꽃을 떠올리며 차를 맛보고, 향에서 떠오르는 장면을 나눕니다.</td><td>차 3~4종과 꽃별 연결, 준비 담당</td></tr>
+    <tr><td>호흡 명상</td><td>곰이·범이와 단군 이야기를 들은 뒤 100초 호흡, 또는 5~7분 명상. "오늘 나에게 남겨 주고 싶은 말은 무엇인가요?"로 마칩니다.</td><td>짧은 안과 긴 안 중 선택, 조용한 자리</td></tr>
+    <tr><td>새해 소원 나무</td><td>2027년에 피우고 싶은 소망을 꽃 모양 종이에 적어 나무에 겁니다.</td><td>나무 모형과 소원지 준비</td></tr>
+    <tr><td>나의 꽃 AI 사진</td><td>자신의 꽃이 담긴 배경으로 사진을 만들어 인화본을 가져갑니다.</td><td>사진 동의와 처리, 비용, 대기 시간</td></tr>
+    <tr><td>꽃 굿즈</td><td>자신의 꽃과 이어진 키캡·팔찌 등을 살펴봅니다.</td><td>판매인지 증정인지, 가격과 재고</td></tr>
+  </table></div>
+  <p class="note">타로·오라컴, 코너를 돌 때마다 찍는 꽃 도장은 넣을지 정하지 않은 후보입니다.</p>
+  <div class="idea">
+    <b>이런 아이디어를 기다립니다</b>
+    <ul>
+      <li>친구와 같이 와서 함께 할 수 있는 것</li>
+      <li>사진으로 남기고 싶어지는 것, 집에 가져갈 수 있는 것</li>
+      <li>5~10분 안에 끝나고 준비물이 간단한 것</li>
+      <li>위 후보 가운데 빼는 게 낫겠다 싶은 것</li>
+    </ul>
+  </div>
+
+  <h3>보완하려는 점</h3>
+  <ul class="dots">
+    <li>꽃 해설만으로는 찾아올 이유가 부족할 수 있으니 진로·가치관·자기 이해처럼 실제로 도움이 되는 내용을 보강합니다.</li>
+    <li>결과지가 길어 현장용으로 줄이고, 질문과 체험을 섞어 진행합니다.</li>
+    <li>진행자가 같은 말로 안내할 수 있도록 대화 가이드를 만들고 행사 전에 함께 익힙니다.</li>
+  </ul>
+
+  <h2 id="soom">2027년 1월 「숨·빛·꽃」 <span class="tag">초안 · 계획 단계</span></h2>
+  <p class="quote">나의 꽃을 알았다면, 이제 그 꽃을 피워 볼 시간.</p>
+  <p>12월이 나의 아름다움을 발견하는 시간이라면, 1월은 그것을 가꾸고 피우는 방법을 직접 해 보는 시간입니다. 꽃 풀이에서 벗어나 호흡·명상·수행 체험이 중심이 됩니다.</p>
+  <ul class="plan three">
+    <li><b>숨 · 나에게 집중</b><span>일상에서 잠시 벗어나 호흡으로 몸과 마음을 느끼는 짧은 명상</span></li>
+    <li><b>빛 · 내 안의 가능성</b><span>인간꽃·선정화의 뜻을 쉬운 말로 소개하고 수행문화를 가볍게 만납니다</span></li>
+    <li><b>꽃 · 나의 아름다움을 피우다</b><span>그중 하나를 함께 체험하고, 가꾸고 싶은 나의 모습을 정리합니다</span></li>
+  </ul>
+  <dl class="facts">
+    <div><dt>대상</dt><dd>12월 카페 참여자와 새로 관심을 가진 분. 카페에 오지 않은 분도 따로 모집하는 안을 검토</dd></div>
+    <div><dt>일시·장소</dt><dd>2027년 1월 중. 날짜, 장소, 진행자, 정원은 미정</dd></div>
+    <div><dt>진행 원칙</dt><dd>강의보다 체험. 처음 접하는 청년도 이해할 수 있는 말로. 어떤 모임인지 미리 분명히 알리고 참가는 본인이 선택</dd></div>
+  </dl>
+  <h3>검토 중인 안</h3>
+  <ul class="dots">
+    <li>한 번의 모임이 아니라 4주 과정으로 운영하는 안: 자기 이해 → 내면의 성장(명상·수행) → 삶의 방향(진로·가치관)</li>
+    <li>오라컴 체험을 이 후속 과정의 흥미 요소로 소개하는 안</li>
+  </ul>
+
+  <h2 id="together">아직 정하지 않은 것</h2>
+  <ol class="num">
+    <li><b>일정</b> 12월 테마카페의 날짜와 회차, 1월 모임의 날짜와 장소</li>
+    <li><b>카페에서 할 것</b> 테이블 대화의 내용과 선택 코너 구성. 테이블 중심으로 할지 코너를 나눠 돌지</li>
+    <li><b>후속 모임의 형태</b> 한 번의 모임으로 할지 4주 과정으로 할지, 주요 체험과 진행자</li>
+    <li><b>개인정보</b> 꽃을 찾을 때 넣는 생년월일과 후속 안내용 연락처를 어떻게 다룰지</li>
+    <li><b>역할</b> 대전역 활동, 온라인 홍보, 카페 진행자와 사전 교육을 누가 맡을지</li>
+  </ol>
+
+  <h2>열 가지 꽃, 열 가지 이야기</h2>
+  <p>태어난 날의 열 가지 기운마다 꽃 하나를 짝지었습니다. 같은 꽃이라도 피어나는 모습은 저마다 다릅니다.</p>
+  <div class="ten">
+    <figure class="flat"><img src="img/flowers10.jpg" alt="목련, 벚꽃, 장미, 백일홍, 들꽃, 캐모마일, 해국, 코스모스, 푸른 수국, 안개꽃 그림 열 개" width="960" height="780"></figure>
+    <ol>
+      <li><i>甲木</i>목련</li><li><i>己土</i>캐모마일</li>
+      <li><i>乙木</i>벚꽃</li><li><i>庚金</i>해국</li>
+      <li><i>丙火</i>장미</li><li><i>辛金</i>코스모스</li>
+      <li><i>丁火</i>백일홍</li><li><i>壬水</i>푸른 수국</li>
+      <li><i>戊土</i>들꽃</li><li><i>癸水</i>안개꽃</li>
+    </ol>
+  </div>
+
+  <h2>나의 꽃 카드</h2>
+  <p>현장에서 드리는 「나의 꽃」 카드 10종 가운데 세 가지입니다. 명함 크기 카드의 앞면에는 나를 닮은 꽃과 한 줄 문구가, 뒷면에는 그 꽃이 들려주는 짧은 이야기가 담깁니다.</p>
+  <div class="row three cards">
+    <figure><img src="img/f01.jpg" alt="목련 카드 앞면. 자신의 방향을 향해 자라나는 꽃" width="700" height="1260"><figcaption>목련 · 자신의 방향을 향해 자라나는 꽃</figcaption></figure>
+    <figure><img src="img/f03.jpg" alt="장미 카드 앞면. 존재 자체로 빛나는 꽃" width="700" height="1260"><figcaption>장미 · 존재 자체로 빛나는 꽃</figcaption></figure>
+    <figure><img src="img/f08.jpg" alt="코스모스 카드 앞면. 작은 차이에서 아름다움을 발견하는 꽃" width="700" height="1260"><figcaption>코스모스 · 작은 차이에서 아름다움을 발견하는 꽃</figcaption></figure>
+  </div>
+  <div class="row two">
+    <figure class="flat"><img src="img/backs.jpg" alt="꽃카드 뒷면 10종을 두 줄로 늘어놓은 모습. 꽃마다 제목, 짧은 이야기, 마지막 한마디가 적혀 있다." width="1284" height="906"><figcaption>꽃카드 뒷면 10종. 꽃마다 다른 이야기</figcaption></figure>
+    <figure><img src="img/table.jpg" alt="개화 開花 글자와 수채화 꽃이 그려진 가판대 테이블보 시안" width="1200" height="800"><figcaption>대전역 가판대 테이블보 시안</figcaption></figure>
+  </div>
+
+  <h2>온라인으로도 알립니다</h2>
+  <p>현장에 오지 못하는 분들도 참여할 수 있도록 두 가지를 함께 운영합니다.</p>
+  <ul class="plan">
+    <li><b>나의 꽃 찾기 사이트</b><span>휴대폰으로 접속해 생년월일을 넣으면 나의 꽃과 이야기를 바로 볼 수 있습니다. 현장 QR과 온라인 홍보가 모두 이 사이트로 이어집니다.</span></li>
+    <li><b>인스타그램 카드뉴스</b><span>「개화」와 열 가지 꽃, 꽃카드를 다섯 장으로 소개합니다. 마지막 장의 QR을 캡처하면 바로 사이트로 접속할 수 있습니다.</span></li>
+  </ul>
+  <div class="strip">
+    <figure><img src="img/news1.jpg" alt="카드뉴스 1장. 나의 꽃은 무엇일까요? 당신을 닮은 꽃을 찾아서" width="648" height="810"><figcaption>1 · 표지</figcaption></figure>
+    <figure><img src="img/news2.jpg" alt="카드뉴스 2장. 태어난 날에 숨겨진 나만의 꽃" width="648" height="810"><figcaption>2 · 나의 꽃 찾기</figcaption></figure>
+    <figure><img src="img/news3.jpg" alt="카드뉴스 3장. 열 가지 꽃, 열 가지 이야기" width="648" height="810"><figcaption>3 · 열 가지 꽃</figcaption></figure>
+    <figure><img src="img/news4.jpg" alt="카드뉴스 4장. 한 장의 카드에 담긴 나의 이야기" width="648" height="810"><figcaption>4 · 꽃카드 소개</figcaption></figure>
+    <figure><img src="img/news5.jpg" alt="카드뉴스 5장. 당신을 닮은 꽃을 만나보세요, 나의 꽃 찾기 QR" width="648" height="810"><figcaption>5 · QR로 참여</figcaption></figure>
+  </div>
+  <p class="note">인스타그램 카드뉴스 5장. 휴대폰에서는 옆으로 밀어 보세요.</p>
+
+  <h2 id="try">직접 체험해 보실 수 있어요</h2>
+  <div class="try">
+    <div>
+      <p>휴대폰으로 아래 주소에 접속해 생년월일을 입력하면 나의 꽃과 이야기를 볼 수 있습니다. 태어난 시간을 몰라도 참여할 수 있습니다.</p>
+      <a class="link" id="flower-link" href="https://flowering.sindok.store/" target="_blank" rel="noopener">https://flowering.sindok.store/</a>
+      <div class="copy"><button type="button" id="copy-btn">주소 복사</button><span class="done" id="copy-done" hidden>복사했습니다</span></div>
+    </div>
+    <div class="qr"><img src="img/qr.png" alt="나의 꽃 찾기 참여 QR 코드" width="130" height="130"></div>
+  </div>
+
+  <h2>이렇게 함께하실 수 있어요</h2>
+  <ul class="plan">
+    <li><b>오프활동 참여</b><span>주말 대전역에서 나의 꽃 찾기 안내와 꽃카드 전달을 함께합니다. 한 번만 와 주셔도 좋습니다.</span></li>
+    <li><b>테마카페 운영·기획</b><span>12월 꽃 테마카페의 코너 구성과 진행, 준비물을 함께 만듭니다. 선택 코너 아이디어도 기다립니다.</span></li>
+    <li><b>이후 모임 운영·기획</b><span>2027년 1월 「숨·빛·꽃」 모임의 내용과 진행 방식을 함께 준비합니다.</span></li>
+  </ul>
+
+  <footer>※ 사진은 제작 중인 시안이며, 실제 인쇄물과 다를 수 있습니다. 12월 카페와 1월 모임의 내용은 초안이며, 카페 날짜와 1월 모임의 일정·장소는 확정 후 다시 안내드립니다.</footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy-btn');
+    var done = document.getElementById('copy-done');
+    var link = document.getElementById('flower-link');
+    btn.addEventListener('click', function () {
+      var text = link.getAttribute('href');
+      function show() { done.hidden = false; setTimeout(function () { done.hidden = true; }, 2000); }
+      function fallback() {
+        var r = document.createRange(); r.selectNodeContents(link);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(show, fallback);
+      } else { fallback(); }
+    });
+  })();
+</script>
+</body>
+</html>
