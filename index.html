@@ -126,6 +126,8 @@
   .idea { background: var(--accent-soft); border-radius: 12px; padding: 16px 18px; margin-top: 14px; }
   .idea b { color: var(--accent); }
   .idea ul { margin: 6px 0 0; padding-left: 1.2em; }
+  .scene { display: grid; grid-template-columns: minmax(0, 210px) minmax(0, 1fr); gap: 22px; align-items: center; margin-top: 24px; }
+  @media (max-width: 560px) { .scene { grid-template-columns: 1fr; } .scene .bn img { max-width: 62%; } }
 </style>
 
 </head>
@@ -146,12 +148,15 @@
 
   <h2>어떻게 진행되나요</h2>
   <ul class="plan">
-    <li><b>11월 21일(토)부터 주말, 대전역</b><span>지나는 분들이 QR로 1~2분 만에 나의 꽃을 찾아보고, 꽃카드를 받아 갑니다. STB 상생방송 SNS 구독·팔로우 이벤트도 함께 진행합니다.</span></li>
+    <li><b>11월 21일(토)부터 주말, 대전역</b><span>지나는 분들이 QR로 30초 만에 나의 꽃을 찾아보고, 꽃카드를 받아 갑니다. STB 상생방송 SNS 구독·팔로우 이벤트도 함께 진행합니다.</span></li>
     <li><b>12월 중(날짜 미정), 교육관 2층 북카페</b><span>꽃 테마카페 「개화 — 꽃으로 읽는 나」. 장소만 정해졌고, 날짜와 무엇을 할지는 정하는 중입니다. 개인별 꽃 이야기, 차와 향, 짧은 호흡 명상 등을 후보로 두고 있습니다.</span></li>
     <li><b>2027년 1월 (계획)</b><span>후속 모임 「숨·빛·꽃」. 호흡 명상으로 시작해 선정화·인간꽃 등 수행문화를 소개하고 함께 체험합니다.</span></li>
   </ul>
 
-  <figure style="margin-top:24px"><img src="img/site.jpg" alt="대전역 광장에 개화 테이블, SNS 이벤트 배너, STB 상생방송 뽑기 테이블이 나란히 놓인 현장 구성 시안" width="1400" height="788"><figcaption>11월 21일 대전역 오프활동 현장 구성 시안. 왼쪽 개화 테이블, 가운데 SNS 이벤트 배너, 오른쪽 STB 상생방송 뽑기 테이블</figcaption></figure>
+  <div class="scene">
+    <figure class="bn"><img src="img/banner.jpg" alt="현장 활동 배너. 나를 닮은 꽃, 지금 바로 테스트해보세요. 30초 만에 끝나는 나의 꽃 테스트, 나만의 꽃 결과 카드 받기, 그리고 참여 QR" width="667" height="2000"><figcaption>현장 활동 배너</figcaption></figure>
+    <figure><img src="img/tablecloth.jpg" alt="테이블보. 개화 開花 글자와 상생방송 서포터즈, 양옆에 수채화 꽃" width="996" height="384"><figcaption>테이블보. 배너의 QR을 찍으면 바로 나의 꽃 찾기로 이어집니다</figcaption></figure>
+  </div>
 
 
   <h2 id="cafe">12월 꽃 테마카페 <span class="tag">초안 · 확정 전</span></h2>
@@ -255,9 +260,8 @@
     <figure><img src="img/f03.jpg" alt="장미 카드 앞면. 존재 자체로 빛나는 꽃" width="700" height="1260"><figcaption>장미 · 존재 자체로 빛나는 꽃</figcaption></figure>
     <figure><img src="img/f08.jpg" alt="코스모스 카드 앞면. 작은 차이에서 아름다움을 발견하는 꽃" width="700" height="1260"><figcaption>코스모스 · 작은 차이에서 아름다움을 발견하는 꽃</figcaption></figure>
   </div>
-  <div class="row two">
+  <div class="row">
     <figure class="flat"><img src="img/backs.jpg" alt="꽃카드 뒷면 10종을 두 줄로 늘어놓은 모습. 꽃마다 제목, 짧은 이야기, 마지막 한마디가 적혀 있다." width="1284" height="906"><figcaption>꽃카드 뒷면 10종. 꽃마다 다른 이야기</figcaption></figure>
-    <figure><img src="img/table.jpg" alt="개화 開花 글자와 수채화 꽃이 그려진 가판대 테이블보 시안" width="1200" height="800"><figcaption>대전역 가판대 테이블보 시안</figcaption></figure>
   </div>
 
   <h2>온라인으로도 알립니다</h2>
@@ -313,5 +317,6 @@
     });
   })();
 </script>
+
 </body>
 </html>
